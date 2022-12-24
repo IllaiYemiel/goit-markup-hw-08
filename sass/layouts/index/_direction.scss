@@ -1,0 +1,40 @@
+.direction {
+    padding-top: 0;
+}
+
+.section-title {
+    @include font(null, 36px, calc(42/36), null);
+    margin-top: 0;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.direction__list {
+    @include flex(flex, null, space-between);
+    position: relative;
+    bottom: 0;
+    list-style: none;
+}
+
+.direction__text {
+    position: relative;
+    & img {
+    
+            display: block;
+        }
+}
+
+.direction__name {
+    @include font(700, null, calc(16/14), null);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--third-text-color);
+    background: rgba(47, 48, 58, 0.8);
+}

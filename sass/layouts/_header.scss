@@ -1,0 +1,115 @@
+
+.header {
+    border-bottom: 1px solid #ECECEC;
+}
+
+.header-container,
+.novigation--flex {
+    @include flex(flex, center, null);
+}
+
+.novigation--flex {
+    margin-right: auto;
+}
+
+.logo {
+    @include font(null, 26px, calc(31/26), null);
+    font-family: 'Raleway';
+    color: #000000;
+    text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &>span {
+            color: var(--accent-color);
+        }
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+}
+
+/* Site nav */
+
+.novigation__list {
+    display: flex;
+    margin-left: 93px;
+    gap: 50px;
+}
+
+.novigation__link {
+    @include font(500, null, calc(16/14), 0.02em);
+    position: relative;
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:focus,
+    &:hover {
+    color: var(--accent-color);
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: -1px;
+        left: 0;
+        display: inline-flex;
+        width: 100%;
+        height: 4px;
+        background-color: var(--accent-color);
+        border-radius: 4px;
+        opacity: 0;
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    &:hover::after,
+    &:focus::after {
+        content: "";
+        opacity: 1;
+    }
+
+    &.current {
+        color: var(--accent-color)
+    }
+
+    &.current::after {
+        position: absolute;
+        content: "";
+        bottom: -1px;
+        left: 0;
+        display: inline-flex;
+        width: 100%;
+        height: 4px;
+        background-color: var(--accent-color);
+        border-radius: 4px;
+        opacity: 1;
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+/* Auth nav */
+
+.connaction__list {
+    display: flex;
+    gap: 50px;
+}
+
+
+.connaction__link {
+    @include flex(flex, center, null);
+    @include font(500, null, calc(16/14), 0.02em);
+    padding-top: 32px;
+    padding-bottom: 32px;
+    color: var(--second-text-color);
+    text-decoration: none;
+    fill: var(--second-text-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:focus,
+        &:hover {
+            color: var(--accent-color);
+        }
+}
+
+.connaction__icon {
+    margin-right: 10px;
+    fill: currentColor;
+}
