@@ -63,6 +63,63 @@
             </li>
           </ul>
         </div>
+        <button class="menu-btn" type="button">
+          <svg class="menu_btn-icon" width="40px" height="40px">
+            <use href="./images/icons.svg/symbol-defs.svg#icon-menu-mob-btn"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-menu is-hidden">
+        <div class="container">
+          <button class="menu-btn-close">&times;</button>
+          <div class="mobile-menu__content">
+            <nav class="mob-novigation">
+              <ul class="mob-novigation__list list">
+                <li class="mob-novigation__item">
+                  <a class="mob-novigation__link" href="/index.html">Студія</a>
+                </li>
+                <li class="mob-novigation__item">
+                  <a class="mob-novigation__link current" href="./portfolio.html">Портфоліо</a>
+                </li>
+                <li class="mob-novigation__item">
+                  <a class="mob-novigation__link" href="./contacts.html">Контакти</a>
+                </li>
+              </ul>
+            </nav>
+            <div>
+              <div class="mob-connaction">
+                <ul class="mob-connaction__list list">
+                  <li class="mob-connaction__item">
+                    <a class="mob-connaction__link-tel" href="tel:+380961111111">
+                      +38 096 111 11 11</a
+                    >
+                  </li>
+                  <li class="mob-connaction__item">
+                    <a class="mob-connaction__link-mail" href="mailto:info@devstudio.com">
+                      info@devstudio.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="mob-social-menu">
+                <ul class="mob-social-menu__list list">
+                  <li class="mob-social-menu__item">
+                    <a class="mob-social-menu__link" href=""> Instagram </a>
+                  </li>
+                  <li class="mob-social-menu__item">
+                    <a class="mob-social-menu__link" href=""> Twitter</a>
+                  </li>
+                  <li class="mob-social-menu__item">
+                    <a class="mob-social-menu__link" href=""> Facebook </a>
+                  </li>
+                  <li class="mob-social-menu__item">
+                    <a class="mob-social-menu__link" href=""> Linkedin</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -74,22 +131,60 @@
         <div class="container">
           <h1 hidden>Портфоліо</h1>
           <ul class="filter-list section__filter-list">
-            <li class="item"><button type="button" class="filter-list__btn">Усі</button></li>
-            <li class="item"><button type="button" class="filter-list__btn">Веб-сайти</button></li>
-            <li class="item"><button type="button" class="filter-list__btn">Додатки</button></li>
-            <li class="item"><button type="button" class="filter-list__btn">Дизайн</button></li>
-            <li class="item"><button type="button" class="filter-list__btn">Маркетинг</button></li>
+            <li class="filter-list__item">
+              <button type="button" class="filter-list__btn">Усі</button>
+            </li>
+            <li class="filter-list__item">
+              <button type="button" class="filter-list__btn">Веб-сайти</button>
+            </li>
+            <li class="filter-list__item">
+              <button type="button" class="filter-list__btn">Додатки</button>
+            </li>
+            <li class="filter-list__item">
+              <button type="button" class="filter-list__btn">Дизайн</button>
+            </li>
+            <li class="filter-list__item">
+              <button type="button" class="filter-list__btn">Маркетинг</button>
+            </li>
           </ul>
 
           <ul class="works-list section__works-list">
             <li class="works-list__item">
               <div class="works-list__thumb">
-                <img
-                  src="./images/images.portfolio/img.jpg"
-                  alt="Веб-сайт"
-                  width="370"
-                  height="294"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img.jpg    1x,
+                      ./images/images.portfolio/img-2x.jpg 2x
+                    "
+                    media="(min-width:1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-tab.jpg    1x,
+                      ./images/images.portfolio/img-tab-2x.jpg 2x
+                    "
+                    media="(min-width:768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-mob.jpg    1x,
+                      ./images/images.portfolio/img-mob-2x.jpg 2x
+                    "
+                    media="(min-width:480px)"
+                  />
+                  <img
+                    srcset="
+                      ./images/images.portfolio/img.jpg    1x,
+                      ./images/images.portfolio/img-2x.jpg 2x
+                    "
+                    src="./images/images.portfolio/img.jpg"
+                    alt="Веб-сайт"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
+
                 <p class="works-list__thumb-overlay">
                   Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
                   це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну
@@ -104,12 +199,39 @@
 
             <li class="works-list__item">
               <div class="works-list__thumb">
-                <img
-                  src="./images/images.portfolio/img-2.jpg"
-                  alt="Дизайн"
-                  width="370"
-                  height="294"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-2.jpg    1x,
+                      ./images/images.portfolio/img-2-2x.jpg 2x
+                    "
+                    media="(min-width:1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-2-tab.jpg    1x,
+                      ./images/images.portfolio/img-2-tab-2x.jpg 2x
+                    "
+                    media="(min-width:768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-2-mob.jpg    1x,
+                      ./images/images.portfolio/img-2-mob-2x.jpg 2x
+                    "
+                    media="(min-width:480px)"
+                  />
+                  <img
+                    srcset="
+                      ./images/images.portfolio/img-2.jpg    1x,
+                      ./images/images.portfolio/img-2-2x.jpg 2x
+                    "
+                    src="./images/images.portfolio/img-2.jpg"
+                    alt="Дизайн"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="works-list__thumb-overlay">
                   Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
                   це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну
@@ -124,12 +246,39 @@
 
             <li class="works-list__item">
               <div class="works-list__thumb">
-                <img
-                  src="./images/images.portfolio/img-3.jpg"
-                  alt="Додаток"
-                  width="370"
-                  height="294"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-3.jpg    1x,
+                      ./images/images.portfolio/img-3-2x.jpg 2x
+                    "
+                    media="(min-width:1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-3-tab.jpg    1x,
+                      ./images/images.portfolio/img-3-tab-2x.jpg 2x
+                    "
+                    media="(min-width:768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-3-mob.jpg    1x,
+                      ./images/images.portfolio/img-3-mob-2x.jpg 2x
+                    "
+                    media="(min-width:480px)"
+                  />
+                  <img
+                    srcset="
+                      ./images/images.portfolio/img-3.jpg    1x,
+                      ./images/images.portfolio/img-3-2x.jpg 2x
+                    "
+                    src="./images/images.portfolio/img-3.jpg"
+                    alt="Додаток"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="works-list__thumb-overlay">
                   Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
                   це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну
@@ -144,12 +293,39 @@
 
             <li class="works-list__item">
               <div class="works-list__thumb">
-                <img
-                  src="./images/images.portfolio/img-4.jpg"
-                  alt="Маркетинг"
-                  width="370"
-                  height="294"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-4.jpg    1x,
+                      ./images/images.portfolio/img-4-2x.jpg 2x
+                    "
+                    media="(min-width:1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-4-tab.jpg    1x,
+                      ./images/images.portfolio/img-4-tab-2x.jpg 2x
+                    "
+                    media="(min-width:768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-4-mob.jpg    1x,
+                      ./images/images.portfolio/img-4-mob-2x.jpg 2x
+                    "
+                    media="(min-width:480px)"
+                  />
+                  <img
+                    srcset="
+                      ./images/images.portfolio/img-4.jpg    1x,
+                      ./images/images.portfolio/img-4-2x.jpg 2x
+                    "
+                    src="./images/images.portfolio/img-4.jpg"
+                    alt="Маркетинг"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="works-list__thumb-overlay">
                   Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
                   це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну
@@ -164,12 +340,39 @@
 
             <li class="works-list__item">
               <div class="works-list__thumb">
-                <img
-                  src="./images/images.portfolio/img-5.jpg"
-                  alt="Додаток"
-                  width="370"
-                  height="294"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-5.jpg    1x,
+                      ./images/images.portfolio/img-5-2x.jpg 2x
+                    "
+                    media="(min-width:1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-5-tab.jpg    1x,
+                      ./images/images.portfolio/img-5-tab-2x.jpg 2x
+                    "
+                    media="(min-width:768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-5-mob.jpg    1x,
+                      ./images/images.portfolio/img-5-mob-2x.jpg 2x
+                    "
+                    media="(min-width:480px)"
+                  />
+                  <img
+                    srcset="
+                      ./images/images.portfolio/img-5.jpg    1x,
+                      ./images/images.portfolio/img-5-2x.jpg 2x
+                    "
+                    src="./images/images.portfolio/img-5.jpg"
+                    alt="Додаток"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="works-list__thumb-overlay">
                   Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
                   це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну
@@ -184,12 +387,39 @@
 
             <li class="works-list__item">
               <div class="works-list__thumb">
-                <img
-                  src="./images/images.portfolio/img-6.jpg"
-                  alt="Веб-сайт"
-                  width="370"
-                  height="294"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-6.jpg    1x,
+                      ./images/images.portfolio/img-6-2x.jpg 2x
+                    "
+                    media="(min-width:1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-6-tab.jpg    1x,
+                      ./images/images.portfolio/img-6-tab-2x.jpg 2x
+                    "
+                    media="(min-width:768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-6-mob.jpg    1x,
+                      ./images/images.portfolio/img-6-mob-2x.jpg 2x
+                    "
+                    media="(min-width:480px)"
+                  />
+                  <img
+                    srcset="
+                      ./images/images.portfolio/img-6.jpg    1x,
+                      ./images/images.portfolio/img-6-2x.jpg 2x
+                    "
+                    src="./images/images.portfolio/img-6.jpg"
+                    alt="Веб-сайт"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="works-list__thumb-overlay">
                   Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
                   це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну
@@ -204,12 +434,39 @@
 
             <li class="works-list__item">
               <div class="works-list__thumb">
-                <img
-                  src="./images/images.portfolio/img-7.jpg"
-                  alt="Дизайн"
-                  width="370"
-                  height="294"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-7.jpg    1x,
+                      ./images/images.portfolio/img-7-2x.jpg 2x
+                    "
+                    media="(min-width:1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-7-tab.jpg    1x,
+                      ./images/images.portfolio/img-7-tab-2x.jpg 2x
+                    "
+                    media="(min-width:768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-7-mob.jpg    1x,
+                      ./images/images.portfolio/img-7-mob-2x.jpg 2x
+                    "
+                    media="(min-width:480px)"
+                  />
+                  <img
+                    srcset="
+                      ./images/images.portfolio/img-7.jpg    1x,
+                      ./images/images.portfolio/img-7-2x.jpg 2x
+                    "
+                    src="./images/images.portfolio/img-7.jpg"
+                    alt="Дизайн"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="works-list__thumb-overlay">
                   Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
                   це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну
@@ -224,12 +481,39 @@
 
             <li class="works-list__item">
               <div class="works-list__thumb">
-                <img
-                  src="./images/images.portfolio/img-8.jpg"
-                  alt="Маркетинг"
-                  width="370"
-                  height="294"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-8.jpg    1x,
+                      ./images/images.portfolio/img-8-2x.jpg 2x
+                    "
+                    media="(min-width:1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-8-tab.jpg    1x,
+                      ./images/images.portfolio/img-8-tab-2x.jpg 2x
+                    "
+                    media="(min-width:768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-8-mob.jpg    1x,
+                      ./images/images.portfolio/img-8-mob-2x.jpg 2x
+                    "
+                    media="(min-width:480px)"
+                  />
+                  <img
+                    srcset="
+                      ./images/images.portfolio/img-8.jpg    1x,
+                      ./images/images.portfolio/img-8-2x.jpg 2x
+                    "
+                    src="./images/images.portfolio/img-8.jpg"
+                    alt="Маркетинг"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="works-list__thumb-overlay">
                   Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
                   це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну
@@ -244,12 +528,39 @@
 
             <li class="works-list__item">
               <div class="works-list__thumb">
-                <img
-                  src="./images/images.portfolio/img-9.jpg"
-                  alt="Додаток"
-                  width="370"
-                  height="294"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-9.jpg    1x,
+                      ./images/images.portfolio/img-9-2x.jpg 2x
+                    "
+                    media="(min-width:1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-9-tab.jpg    1x,
+                      ./images/images.portfolio/img-9-tab-2x.jpg 2x
+                    "
+                    media="(min-width:768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/images.portfolio/img-9-mob.jpg    1x,
+                      ./images/images.portfolio/img-9-mob-2x.jpg 2x
+                    "
+                    media="(min-width:480px)"
+                  />
+                  <img
+                    srcset="
+                      ./images/images.portfolio/img-9.jpg    1x,
+                      ./images/images.portfolio/img-9-2x.jpg 2x
+                    "
+                    src="./images/images.portfolio/img-9.jpg"
+                    alt="Додаток"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="works-list__thumb-overlay">
                   Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
                   це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну
@@ -347,5 +658,7 @@
         </form>
       </div>
     </footer>
+
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

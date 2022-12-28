@@ -1,6 +1,7 @@
 
 .header {
     border-bottom: 1px solid #ECECEC;
+    position: relative;
 }
 
 .header-container,
@@ -13,11 +14,16 @@
 }
 
 .logo {
-    @include font(null, 26px, calc(31/26), null);
+    @include font(null, 24px, calc(28/24), null);
     font-family: 'Raleway';
     color: #000000;
     text-decoration: none;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    padding: 16px 0;
+
+
+    // @include font(null, 26px, calc(31/26), null);
     &>span {
             color: var(--accent-color);
         }
@@ -33,6 +39,10 @@
     display: flex;
     margin-left: 93px;
     gap: 50px;
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: flex;
+    }
 }
 
 .novigation__link {
@@ -88,17 +98,30 @@
 
 /* Auth nav */
 
+.connaction {
+    display: none;
+    @media screen and (min-width: 768px) {
+            display: block;
+        }
+}
+
 .connaction__list {
     display: flex;
-    gap: 50px;
+    flex-direction: column;
+    gap: 10px;
+    @media screen and (min-width: 1200px) {
+            flex-direction: row;
+            margin-bottom: 0;
+            gap: 50px;
+        }
 }
 
 
 .connaction__link {
     @include flex(flex, center, null);
     @include font(500, null, calc(16/14), 0.02em);
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: 0;
+    padding-bottom: 0;
     color: var(--second-text-color);
     text-decoration: none;
     fill: var(--second-text-color);
@@ -107,9 +130,156 @@
         &:hover {
             color: var(--accent-color);
         }
+    @media screen and (min-width: 1200px) {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
 }
 
 .connaction__icon {
     margin-right: 10px;
     fill: currentColor;
+}
+
+.menu-btn {
+    height: 40px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    @media screen and (min-width: 768px) {
+            display: none;
+        }
+}
+
+
+.mobile-menu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    padding: 10px 15px 48px 0px;
+    background-color: var(--third-text-color);
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+    @media screen and (min-width: 768px) {
+            display: none;
+        }
+
+    & .container {
+        display: block;
+        height: 100%;
+        padding-left: 40px;
+        padding-bottom: 48px;
+    }
+    &.is-hidden {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+
+.menu-btn-close {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition:  1250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+}
+
+.mobile-menu__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+
+
+.mob-novigation__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    // margin-bottom: 300px;
+    padding-left: 0;
+    gap: 32px;
+}
+
+.mob-novigation__link {
+    @include font(500, 40px, calc(47/40), 0.02em);
+    text-decoration: none;
+    color: var(--primary-text-color);
+    
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+    &.current {
+        color: var(--accent-color)
+    }
+}
+
+.mob-connaction__list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 64px;
+    gap: 32px;
+}
+
+.mob-connaction__link-tel {
+    @include font(500, 34px, calc(40/34), 0.02em);
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.mob-connaction__link-mail {
+    @include font(500, 24px, calc(28/24), 0.02em);
+    color: var(--second-text-color);
+    text-decoration: none;
+}
+
+
+
+.mob-social-menu__list {
+    display: flex;
+    gap: 20px;
+}
+
+.mob-social-menu__item {
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    position: relative;
+}
+
+.mob-social-menu__item:nth-child(n+2)::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 22px;
+    height: 1px;
+    top: -10%;
+    left: -15%;
+
+    transform-origin: bottom left;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    transform: rotate(90deg);
+}
+
+.mob-social-menu__link {
+    @include font(500, 18px, calc(22/18), 0.02em);
+    color: var(--accent-color);
+    text-decoration: none;
 }

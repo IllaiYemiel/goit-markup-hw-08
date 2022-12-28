@@ -1,15 +1,27 @@
 .custumers__list {
     @include flex(flex, null, null);
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
     list-style: none;
     gap: 30px;
 }
 
+.custumers__item {
+    width: calc((100% - 30px) / 2);
+    @media screen and (min-width: 768px) {
+        width: calc((100% - 60px) / 3);
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: calc((100% - 150px) / 6);
+    }
+}
+
 .custumers__link {
-    @include flex(flex, center, null);
+    @include flex(flex, center, center);
     height: 92px;
-    width: 170px;
+    width: 100%;
     padding: 0;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
