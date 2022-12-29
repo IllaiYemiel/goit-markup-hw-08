@@ -218,9 +218,13 @@
 }
 
 .mob-novigation__link {
-    @include font(500, 40px, calc(47/40), 0.02em);
+    @include font(500, 28px, calc(47/40), 0.02em);
     text-decoration: none;
     color: var(--primary-text-color);
+
+    @media screen and (min-width: 480px) {
+            @include font(500, 40px, calc(47/40), 0.02em);
+        }
     
     &:hover,
     &:focus {
@@ -239,15 +243,24 @@
 }
 
 .mob-connaction__link-tel {
-    @include font(500, 34px, calc(40/34), 0.02em);
+    @include font(500, 24px, calc(40/34), 0.02em);
     color: var(--accent-color);
     text-decoration: none;
+
+    @media screen and (min-width: 480px) {
+            @include font(500, 34px, calc(40/34), 0.02em);
+        }
+
 }
 
 .mob-connaction__link-mail {
-    @include font(500, 24px, calc(28/24), 0.02em);
+    @include font(500, 16px, calc(28/24), 0.02em);
     color: var(--second-text-color);
     text-decoration: none;
+
+    @media screen and (min-width: 480px) {
+            @include font(500, 24px, calc(28/24), 0.02em);
+        }
 }
 
 
@@ -268,18 +281,27 @@
     content: '';
     position: absolute;
     display: block;
-    width: 22px;
+    width: 12px;
     height: 1px;
     top: -10%;
-    left: -15%;
+    left: -25%;
 
     transform-origin: bottom left;
     border: 1px solid rgba(33, 33, 33, 0.2);
     transform: rotate(90deg);
+
+    @media screen and (min-width: 480px) {
+            width: 22px;
+            left: -15%;
+        }
 }
 
 .mob-social-menu__link {
-    @include font(500, 18px, calc(22/18), 0.02em);
+    @include font(500, 10px, calc(22/18), 0.02em);
     color: var(--accent-color);
     text-decoration: none;
+
+    @media screen and (min-width: 480px) {
+            @include font(500, 18px, calc(22/18), 0.02em);
+        }
 }
